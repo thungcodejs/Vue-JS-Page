@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue JS page</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+ 
+  <!--Header-->
+  <nav id="navbar">
+
+    <div class="logo_main">
+      <img src="https://vuejs.org/images/logo.png" alt="Vue-logo" class="logo">
+      <header>
+        VueJS Documentation
+      </header>
+      <hr>
+    </div>
+    
+    <ul>
+      <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+      <li><a href="#Getting_Started" class="nav-link">Getting Started</a></li>
+      <li><a href="#Template_Syntax" class="nav-link">Template Syntax</a></li>
+      <li><a href="#Transitions_Animation" class="nav-link">Transition & Animation</a></li>
+      <li><a href="#Resources" class="nav-link">Resources</a></li>
+    </ul>
+    <hr>
+    <div class="info">
+     Designed & Coded by <a href="https://github.com/thungcodejs" target="_blank">HUNG PHAM</a>
+    </div>
+  </nav>
+
+  <main id="main-doc">
+    <!--Introduction-->
+    <section id="Introduction" class="main_section">
+      <header>Introduction</header>
+      <h3>What is Vue JS</h3>
+      <hr>
+      <p>
+        Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and
+        is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with <a href="https://vuejs.org/v2/guide/single-file-components.html"> modern tooling </a> and <a href="https://github.com/vuejs/awesome-vue#components--libraries"> supporting libraries </a>.
+      </p>
+      <p>
+        If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.
+      </p>
+      <p>
+        If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the <a href="https://vuejs.org/v2/guide/comparison.html"> Comparison with Other Frameworks </a>.
+      </p>
+    </section>
+
+
+    <!--GettingStarted-->
+    <section id="Getting_Started" class="main-section">
+      <header>Getting Started</header>
+      <h3>Installation</h3>
+      <hr>
+      <blockquote>
+        The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+      </blockquote>
+      <p>
+        The easiest way to try out Vue.js is using the <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world">Codepen Hello World example</a>.Feel free to pen it in another tab and follow along as we go through some basic examples.Or,you can create <a href="https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html">an index.html file</a> and include Vue with:
+      </p>
+      <code class="comment">
+       <span class="note_comment"> development version, includes helpful console warnings </span>
+       <span class="tag_comment">
+         <span class="name_comment">script</span> <span class="attr_comment">src</span><span class="string_comment">"https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"</span>
+       </span>
+      </code>
+      <strong>Or:</strong>
+      <code class="comment">
+       <span class="note_comment"> production version, optimized for size and speed </span>
+       <span class="tag_comment">
+         <span class="name_comment">script</span>  <span class="attr_comment">src</span><span class="string_comment">"https://cdn.jsdelivr.net/npm/vue@2"</span>
+       </span>
+      </code>
+    </section>
+
+    <!--Template Syntax-->
+    <section id="Template_Syntax" class="main-section">
+      <header>Template Syntax</header>
+      <h3>Interpolations</h3>
+      <hr>
+      <h4 id="Text"><a href="#Text"></a>Text</h4>
+      <p>The most basic form of data binding is text interpolation using the “Mustache” syntax (double curly braces):</p>
+      <code class="comment">
+        <span class="name_comment">span</span> <span class="string_comment">span</span>
+      </code>
+      <p>The mustache tag will be replaced with the value of the msg property on the
+         <span class="msg">msg</span>
+      corresponding data object. It will also be updated whenever the data object’s
+       <span class="msg">msg</span>
+       property changes.</p>
+      <p>You can also perform one-time interpolations that do not update on data change by using the <a href="https://vuejs.org/v2/api/#v-once">v-once directive</a>, but keep in mind this will also affect any other bindings on the same node:</p>
+      <code class="comment">
+        <span class="vonce_comment">span</span> <span class="msg_comment">span</span>
+      </code>
+
+      <h4 id="Raw_HTML"><a href="#Raw_HTML"></a>Raw HTML</h4>
+      <p>The double mustaches interprets the data as plain text, not HTML. In order to output real HTML, you will need to use the <a href="https://vuejs.org/v2/api/#v-html"> <span class="msg">v-html </span>directive</a>:</p>
+      <code class="comment">
+        <span class="using">Using mustaches: {{ rawHtml }}</span>
+        <span class="using_v">Using v-html directive: </span> <span class="v_html">span </span> <span class="rav">"ravHtml"</span>
+      </code>
+    </section>
+    
+    <!--Transitions & Animation-->
+    <section id="Transitions_Animation" class="main_section">
+      <header>Transitions & Animation</header>
+      <h3>Enter/Leave & List transitions</h3>
+      <hr>
+      <p>Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. This includes tools to:</p>
+      <ul>
+        <li>automatically apply classes for CSS transitions and animations</li>
+        <li>integrate 3rd-party CSS animation libraries, such as Animate.css</li>
+        <li>use JavaScript to directly manipulate the DOM during transition hooks</li>
+        <li>integrate 3rd-party JavaScript animation libraries, such as Velocity.js</li>
+      </ul>
+      <p>On this page, we’ll only cover entering, leaving, and list transitions, but you can see the next section for <a href="https://vuejs.org/v2/guide/transitioning-state.html">managing state transitions</a>.</p>
+
+      For move,<a href="https://vuejs.org/v2/guide/transitions.html"> click here</a>
+
+      <h3>State Transitions</h3>
+      <hr>
+      <p>Vue’s transition system offers many simple ways to animate entering, leaving, and lists, but what about animating your data itself? For example:</p>
+      <ul>
+        <li>numbers and calculations</li>
+        <li>colors displayed</li>
+        <li>the positions of SVG nodes</li>
+        <li>the sizes and other properties of elements</li>
+      </ul>
+      <p>All of these are either already stored as raw numbers or can be converted into numbers. Once we do that, we can animate these state changes using 3rd-party libraries to tween state, in combination with Vue’s reactivity and component systems.</p>
+
+      For move,<a href="https://vuejs.org/v2/guide/transitioning-state.html"> click here</a>
+    </section>
+    
+    <!--Resources-->
+    <Section id="Resources" class="main_section">
+      <header>Resources</header>
+      <hr>
+      <h3>You can learn about the material at <a href="https://vuejs.org/v2/guide">Vue JS.org</a></h3>
+    </Section>
+  </main>
+</body>
+</html>
